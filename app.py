@@ -34,7 +34,7 @@ if uploaded_file is not None:
         data = data.drop("Class", axis=1)
 
     if "Time" in data.columns:
-    data = data.drop("Time", axis=1)
+        data = data.drop("Time", axis=1)
 
     # Scale data
     data_scaled = scaler.transform(data)

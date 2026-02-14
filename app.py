@@ -56,4 +56,6 @@ if uploaded_file is not None:
     predictions = model.predict(data_scaled)
 
     st.write("Predictions:")
-    st.write(predictions)
+    data["Prediction"] = predictions
+    st.write(data)
+

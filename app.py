@@ -33,6 +33,9 @@ if uploaded_file is not None:
     if "Class" in data.columns:
         data = data.drop("Class", axis=1)
 
+    if "Time" in data.columns:
+    data = data.drop("Time", axis=1)
+
     # Scale data
     data_scaled = scaler.transform(data)
 

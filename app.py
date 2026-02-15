@@ -70,7 +70,7 @@ if uploaded_file is not None:
     elif model_option == "Naive Bayes":
         model = joblib.load("model/naive_bayes_model.pkl")
     elif model_option == "Random Forest":
-        model = joblib.load("model/andom_forest_model.pkl")
+        model = joblib.load("model/random_forest_model.pkl")
     else:
         model = joblib.load("model/xgboost_model.pkl")
 

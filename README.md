@@ -61,3 +61,5 @@ Each model was evaluated using the following metrics:
 | Naive Bayes         | Moderate performance; independence assumption limits effectiveness.                                        |
 | Random Forest       | Best overall performer with highest F1-score and MCC, showing strong balance between precision and recall. |
 | XGBoost             | Achieved the highest AUC and competitive performance, close to Random Forest.                              |
+
+Conclusion : Random Forest and XGBoost demonstrated superior performance for fraud detection, with strong balance between precision and recall.

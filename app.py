@@ -7,6 +7,18 @@ import matplotlib.pyplot as plt
 
 st.title("Credit Card Fraud Detection")
 
+# Load sample test dataset
+sample_data = pd.read_csv("balanced_creditcard.csv")
+
+st.subheader("Download Sample Test Dataset")
+
+st.download_button(
+    label="Download Balanced Test Dataset",
+    data=sample_data.to_csv(index=False),
+    file_name="balanced_creditcard.csv",
+    mime="text/csv"
+)
+
 # Load scaler
 scaler = joblib.load("model/scaler.pkl")
 

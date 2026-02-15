@@ -80,7 +80,7 @@ if uploaded_file is not None:
     st.write(f"F1 Score: {f1:.4f}")
     st.write(f"MCC: {mcc:.4f}")
 
-        st.subheader("Confusion Matrix")
+    st.subheader("Confusion Matrix")
 
     cm = confusion_matrix(y_true, predictions)
 

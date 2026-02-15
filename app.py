@@ -29,6 +29,12 @@ if uploaded_file is not None:
     st.write("Preview of Uploaded Data:")
     st.dataframe(data.head())
 
+    # Keep original Class for evaluation
+    if "Class" in data.columns:
+        y_true = data["Class"]
+    else:
+        y_true = None
+
     # Drop Class column if present
     if "Class" in data.columns:
         data = data.drop("Class", axis=1)
@@ -58,4 +64,30 @@ if uploaded_file is not None:
     st.write("Predictions:")
     data["Prediction"] = predictions
     st.write(data)
+
+    if y_true is not None:
+    st.subheader("Evaluation Metrics")
+
+    accuracy = accuracy_score(y_true, predictions)
+    precision = precision_score(y_true, predictions)
+    recall = recall_score(y_true, predictions)
+    f1 = f1_score(y_true, predictions)
+    mcc = matthews_corrcoef(y_true, predictions)
+
+    st.write(f"Accuracy: {accuracy:.4f}")
+    st.write(f"Precision: {precision:.4f}")
+    st.write(f"Recall: {recall:.4f}")
+    st.write(f"F1 Score: {f1:.4f}")
+    st.write(f"MCC: {mcc:.4f}")
+
+        st.subheader("Confusion Matrix")
+
+    cm = confusion_matrix(y_true, predictions)
+
+    fig, ax = plt.subplots()
+    sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", ax=ax)
+    ax.set_xlabel("Predicted")
+    ax.set_ylabel("Actual")
+
+    st.pyplot(fig)
 

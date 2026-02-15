@@ -66,7 +66,7 @@ if uploaded_file is not None:
     st.write(data)
 
     if y_true is not None:
-    st.subheader("Evaluation Metrics")
+        st.subheader("Evaluation Metrics")
 
     accuracy = accuracy_score(y_true, predictions)
     precision = precision_score(y_true, predictions)
